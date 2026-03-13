@@ -1,0 +1,154 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the cards horizontally */
+    align-items: center;
+    color: white;
+    gap: 30px; /* Adds clean spacing between cards */
+    padding: 20px;
+    
+}
+.nav
+{
+    color: white;
+    font-size: ;
+    margin: -120px 0px 0px 20px;
+    padding: -100px 20px -100px 0px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family:sans-serif;
+}
+.header
+{
+    padding: -10px 20px 0px 0px;
+}
+.player {
+    width: 320px; 
+    height: 420px;
+    text-align: center;
+    
+    /* --- NEW BACKGROUND IMAGE CSS --- */
+    background-image: url('b.jpg'); 
+    background-size: cover; /* Ensures the image covers the whole card */
+    background-position: center; /* Keeps the image centered */
+    background-color: #f60303; /* Fallback color just in case the image loads slowly */
+    /* -------------------------------- */
+
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(70, 28, 28, 0.5);
+}
+
+.player:hover {
+    transform: scale(1.05); /* Slight pop of the whole card */
+    box-shadow: 0 10px 20px goldenrod;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 0, 0, 0.6)), url('b.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.player-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Very smooth, snappy slide */
+    position: relative;
+    z-index: 1; /* Ensures the player stays IN FRONT of the number */
+}
+
+/* Ensure images fit nicely in the new layout */
+.player-content img {
+    height: 260px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.player:hover .player-content {
+    transform: translateX(-60px); /* Moves player to the left on hover */
+}
+
+.jersey-number {
+    position: absolute;
+    left: 50%;
+    top: 45%; /* Slightly higher to center perfectly behind the player's torso */
+    font-family: 'Arial Black', sans-serif;
+    transform: translate(-50%, -50%); /* Centers the number completely */
+    font-size: 230px; /* Massive size like the reference */
+    font-weight: bold;
+    color: #444444; /* Dark grey default state */
+    z-index: 0; /* Keeps it strictly BEHIND the player image */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none; /* Prevents the number from interfering with hover detection */
+}
+
+.player:hover .jersey-number {
+    transform: translate(-45%, -80%); /* Moves the number to the right */
+    color: #d4af37; /* Changes to Gold on hover */
+}
+.player-icon {
+    position: absolute;
+    color: black;
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.player-icon img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    filter: brightness(0);
+}
+
+.player:hover .player-icon {
+    transform: none;
+}
+
+body{
+    background: linear-gradient(black  ,red);
+}
+
+/* Scroll Up Button */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 25px;
+    border: 2px solid goldenrod;
+    background-color: #f60303;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#scrollTopBtn:hover {
+    background-color: goldenrod;
+    color: #f60303;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.6);
+    transform: scale(1.1);
+}
